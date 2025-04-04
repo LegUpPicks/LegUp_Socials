@@ -1,7 +1,12 @@
 import streamlit as st
+import matplotlib.pyplot as plt
 import pandas as pd
+import plotly.express as px
 import plotly.graph_objects as go
 from datetime import datetime
+import calendar
+import numpy as np
+from streamlit_gsheets import GSheetsConnection
 
 st.set_page_config(layout="wide")
 
@@ -121,8 +126,10 @@ fig_weekly.update_layout(
 )
 
 # Display the charts
-st.plotly_chart(fig_weekly, key='weekly_chart')
 st.plotly_chart(fig_daily, key='daily_chart')
 
 # Display the filtered DataFrame
+st.header("All Data")
 st.dataframe(df, hide_index=True)
+
+#st.plotly_chart(fig_weekly, key='weekly_chart')
