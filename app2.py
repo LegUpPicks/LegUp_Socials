@@ -130,6 +130,6 @@ st.plotly_chart(fig_daily, key='daily_chart')
 
 # Display the filtered DataFrame
 st.header("All Data")
-st.dataframe(df, hide_index=True)
+st.dataframe(df.sort_values(by='Date', ascending=False), hide_index=True)
 
 #st.plotly_chart(fig_weekly, key='weekly_chart')
